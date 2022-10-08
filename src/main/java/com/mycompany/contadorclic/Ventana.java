@@ -1,11 +1,12 @@
  
 package com.mycompany.contadorclic;
  
+import java.awt.Color;
 import java.awt.Font;
 import java.awt.Panel;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.awt.event.MouseMotionListener;
+//import java.awt.event.MouseMotionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
@@ -32,12 +33,14 @@ public class Ventana extends JFrame{
     
     private void colocarPanel(){
         panel = new Panel();
+        panel.setBackground(Color.pink);
         panel.setLayout(null);
         getContentPane().add(panel);    
     }    
     private void colocarBoton(){
         boton = new JButton("¡Click aqui!");
         boton.setFont(new Font("arial",1,18));
+        boton.setBackground(Color.red);
         boton.setBounds(160, 350, 150, 50);
         panel.add(boton);
     }  
