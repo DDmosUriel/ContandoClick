@@ -9,6 +9,7 @@ import java.awt.event.MouseListener;
 //import java.awt.event.MouseMotionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 public class Ventana extends JFrame{
@@ -16,7 +17,9 @@ public class Ventana extends JFrame{
     public JButton boton;
     public JTextField cajaTxt;
     public Panel panel;
+    public JLabel etiqueta;
     int i = 1;
+    int j= 1;
     public Ventana(){
         setSize(500,500);
         setTitle("Contador clic");
@@ -29,6 +32,7 @@ public class Ventana extends JFrame{
         colocarPanel();
         colocarBoton();
         oyenteRaton();
+        colocarEtiqueta();
     }
     
     private void colocarPanel(){
@@ -44,6 +48,13 @@ public class Ventana extends JFrame{
         boton.setBounds(160, 350, 150, 50);
         panel.add(boton);
     }  
+    private void colocarEtiqueta(){
+        etiqueta = new JLabel();
+        etiqueta.setBounds(130, 100, 250, 30);
+        etiqueta.setFont(new Font("arial",1,18));
+        //etiqueta.setText("hola es la prueba ubicacion");
+        panel.add(etiqueta);
+    }
     private void colocarCajaTexto(){
         cajaTxt = new JTextField();
         cajaTxt.setFont(new Font("arial",1,20));
@@ -63,7 +74,8 @@ public class Ventana extends JFrame{
 
             @Override
             public void mousePressed(MouseEvent e) {
-                //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+                etiqueta.setText("has pulsado pressed "+j);
+                j++;
             }
 
             @Override
